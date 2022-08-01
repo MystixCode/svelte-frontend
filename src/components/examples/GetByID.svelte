@@ -1,10 +1,18 @@
 <script lang="ts">
 // Todo: do it the typescript way with example and examples type etc
 import { onMount } from 'svelte';
+import type { JSONValue } from '@sveltejs/kit/types/private';
+
+type Example = {
+    id: string
+    examplename: string
+    examplevalue: string
+}
 
 let resjson : any = [];
-let example : any = [];
-let id : number;
+
+let example : Example = {} as Example
+let id : string;
 
 async function GetById() {
 		const res = await fetch(`/api/examples/` + id);
@@ -32,9 +40,9 @@ async function GetById() {
             >
         <br>
         <div class="box2">
-            <span>Id: {example.id} </span><br>
-            <span>Name: {example.examplename} </span><br>
-            <span>Description: {example.examplevalue}</span>
+            <span>id: {example.id} </span><br>
+            <span>examplename: {example.examplename} </span><br>
+            <span>examplevalue: {example.examplevalue}</span>
         </div>
     </div>
 </div>

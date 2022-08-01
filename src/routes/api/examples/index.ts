@@ -1,12 +1,14 @@
+import type { JSONValue } from "@sveltejs/kit/types/private";
+
 const url = 'http://localhost:8080/v1/examples'
 
-export async function GET(request: any ) {
+export async function GET(request: Request ) {
     const r = await fetch(url, {
         headers: {
             Accept: 'application/json',
         }
     });
-    let data : any = [];
+    let data : JSONValue = [];
 
     if (r.status === 200) {
         console.log(r.statusText)
@@ -23,7 +25,7 @@ export async function GET(request: any ) {
     }
 }
 
-export async function POST(request: any) {
+export async function POST(request: Request) {
     const r = await fetch(url, {
         method: "POST",
         headers: {
@@ -32,7 +34,7 @@ export async function POST(request: any) {
         body: request.body
     });
 
-    let data : any = [];
+    let data : JSONValue = [];
 
     if (r.status === 200) {
         console.log(r.statusText)
