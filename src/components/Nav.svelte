@@ -30,7 +30,7 @@
 	</div>
 
 	<div id="links">
-	  <a href="/tests"><i class="fas fa-vial" style="margin-right:8px;"></i>Tests</a>
+	  <a href="/examples"><i class="fas fa-vial" style="margin-right:8px;"></i>Examples</a>
 	  <a href="/about"><i class="fas fa-building" style="margin-right:8px;"></i>About</a>
       <!-- {#if user}
       <a href="/profile"><i class="fas fa-user" style="margin-right:8px;"></i>Profile</a>

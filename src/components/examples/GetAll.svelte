@@ -1,15 +1,15 @@
 <script lang="ts">
-// Todo: do it the typescript way with test and tests type etc
+// Todo: do it the typescript way with example and examples type etc
 import { onMount } from 'svelte';
 
 let resjson : any = [];
-let tests : any = [];
+let examples : any = [];
 
 onMount(async () => {
-		const res = await fetch(`/api/tests`);
+		const res = await fetch(`/api/examples`);
 		resjson = await res.json();
         if (resjson.data != "") {
-            tests = resjson.data.data;
+            examples = resjson.data.data;
         }
         else {
             console.log("error");
@@ -22,10 +22,10 @@ onMount(async () => {
     <!-- {JSON.stringify(resjson)} -->
     <h2>GetAll Component</h2>
     <div class="box">
-        {#each tests as test}
+        {#each examples as example}
             <div class="box2">
-                <span>Name: {test.testname} </span><br>
-                <span>Description: {test.testvalue}</span>
+                <span>Name: {example.examplename} </span><br>
+                <span>Description: {example.examplevalue}</span>
             </div>
         {/each} 
     </div>

@@ -1,16 +1,16 @@
 <script lang="ts">
-// Todo: do it the typescript way with test and tests type etc
+// Todo: do it the typescript way with example and examples type etc
 import { onMount } from 'svelte';
 
 let resjson : any = [];
-let test : any = [];
+let example : any = [];
 let id : number;
 
 async function GetById() {
-		const res = await fetch(`/api/tests/` + id);
+		const res = await fetch(`/api/examples/` + id);
 		resjson = await res.json();
         if (resjson.data != "") {
-            test = resjson.data.data;
+            example = resjson.data.data;
         } 
         else {
             console.log("error");
@@ -32,9 +32,9 @@ async function GetById() {
             >
         <br>
         <div class="box2">
-            <span>Id: {test.id} </span><br>
-            <span>Name: {test.testname} </span><br>
-            <span>Description: {test.testvalue}</span>
+            <span>Id: {example.id} </span><br>
+            <span>Name: {example.examplename} </span><br>
+            <span>Description: {example.examplevalue}</span>
         </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 export async function GET({ params } : any) {
-    const url = 'http://localhost:8080/v1/tests/' + params.id
+    const url = 'http://localhost:8080/v1/examples/' + params.id
     //console.log(params.id)
     const r = await fetch(url, {
         headers: {

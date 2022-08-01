@@ -1,4 +1,4 @@
-const url = 'http://localhost:8080/v1/tests'
+const url = 'http://localhost:8080/v1/examples'
 
 export async function GET(request: any ) {
     const r = await fetch(url, {
