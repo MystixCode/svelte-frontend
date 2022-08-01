@@ -1,3 +1,6 @@
+import type { GetParams } from "@sveltejs/kit/types/internal";
+import type { JSONObject, JSONValue } from "@sveltejs/kit/types/private";
+
 export async function GET({ params } : any) {
     const url = 'http://localhost:8080/v1/examples/' + params.id
     //console.log(params.id)
@@ -7,7 +10,7 @@ export async function GET({ params } : any) {
         }
     });
 
-    let data : any = [];
+    let data : JSONValue = [];
 
     if (r.status === 200) {
         console.log(r.statusText)

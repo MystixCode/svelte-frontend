@@ -1,9 +1,18 @@
 <script lang="ts">
+import type { JSONObject } from '@sveltejs/kit/types/private';
+
 // Todo: do it the typescript way with example and examples type etc
 import { onMount } from 'svelte';
 
+type Example = {
+    id: string
+    examplename: string
+    examplevalue: string
+}
+
 let resjson : any = [];
-let examples : any = [];
+let examples : Array<Example> = []
+
 
 onMount(async () => {
 		const res = await fetch(`/api/examples`);
@@ -24,8 +33,9 @@ onMount(async () => {
     <div class="box">
         {#each examples as example}
             <div class="box2">
-                <span>Name: {example.examplename} </span><br>
-                <span>Description: {example.examplevalue}</span>
+                <span>id: {example.id} </span><br>
+                <span>examplename: {example.examplename} </span><br>
+                <span>examplevalue: {example.examplevalue}</span>
             </div>
         {/each} 
     </div>
