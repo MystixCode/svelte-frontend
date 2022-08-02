@@ -3,4 +3,3 @@ ENV APP_NAME svelte-frontend
 WORKDIR /app
 COPY . .
 CMD npm run dev -- --port 3000
-

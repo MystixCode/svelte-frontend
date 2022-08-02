@@ -3,6 +3,38 @@
 
 This is a frontend for a api
 
+
+
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+
+ npm install
+ npm run dev -- --port 3000 --open
+```
+
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+## Run the build with nodejs
+
+To run a production version of your app:
+
+```bash
+node build/index.js
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
 ## Build and run with docker
 
 ```bash
@@ -30,31 +62,3 @@ docker run --rm -d --name svelte-frontend-dev --network host svelte-frontend-dev
 
 docker kill svelte-frontend-dev
 ```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
- npm run dev -- --port 3000 --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-## Run the build with nodejs
-
-To run a production version of your app:
-
-```bash
-node build/index.js
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.

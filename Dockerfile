@@ -12,4 +12,3 @@ COPY --from=build /app/build /app
 COPY --from=build /app/package.json  /app
 COPY --from=build /app/package-lock.json /app
 CMD node /app/index.js
-

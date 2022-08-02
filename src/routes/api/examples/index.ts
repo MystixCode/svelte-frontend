@@ -25,7 +25,9 @@ export async function GET(request: Request ) {
     }
 }
 
-export async function POST(request: Request) {
+///** @type {import('./__types/items').RequestHandler} */
+export async function POST({ request } : any) {
+
     const r = await fetch(url, {
         method: "POST",
         headers: {
@@ -34,7 +36,7 @@ export async function POST(request: Request) {
         body: request.body
     });
 
-    let data : JSONValue = [];
+    let data : any = [];
 
     if (r.status === 200) {
         console.log(r.statusText)
