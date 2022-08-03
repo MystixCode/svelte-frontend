@@ -1,8 +1,9 @@
 
 # svelte-frontend
 
-This is a frontend for a api
+This is a example frontend for a api
 
+<img src="https://raw.githubusercontent.com/MystixCode/svelte-frontend/master/static/svelte-frontend1.png" width="50%" height="50%">
 
 
 ## Developing
