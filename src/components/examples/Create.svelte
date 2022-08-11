@@ -1,5 +1,7 @@
 <script lang="ts">
 
+import { exampleStore } from '../../stores.js'
+
 let examplename: string = ""
 let examplevalue: string = ""
 
@@ -11,7 +13,16 @@ async function handleSubmit() {
             "examplevalue": examplevalue
             })
     })
+
+//todo if result ok
+//{$exampleStore}
+$exampleStore = examplevalue
+
+
 }
+
+
+
 
 </script>
 
@@ -23,6 +34,6 @@ async function handleSubmit() {
         <input type="text" placeholder="ExampleValue" bind:value={examplevalue} />
         <input type="submit" />
     </form>
-
+    {$exampleStore}
 
 </div>
