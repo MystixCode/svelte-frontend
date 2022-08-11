@@ -1,3 +1,4 @@
 import { writable } from 'svelte/store'
 
-export const exampleStore = writable('defaultExampleStoreValue')
+export const exampleName = writable('defaultExampleStoreName')
+export const exampleValue = writable('defaultExampleStoreValue')

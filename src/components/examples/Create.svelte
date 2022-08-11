@@ -1,39 +1,38 @@
 <script lang="ts">
 
-import { exampleStore } from '../../stores.js'
+import {exampleName,exampleValue} from '../../stores.js'
 
-let examplename: string = ""
-let examplevalue: string = ""
+let name: string = ""
+let value: string = ""
 
-async function handleSubmit() {
+async function create() {
     const submit = await fetch(`/api/examples`, {
         method: "POST",
         body: JSON.stringify({
-            "examplename": examplename,
-            "examplevalue": examplevalue
+            "examplename": name,
+            "examplevalue": value
             })
     })
 
-//todo if result ok
-//{$exampleStore}
-$exampleStore = examplevalue
-
+    //todo if result ok
+    //add values to stores
+    $exampleName = name
+    $exampleValue = value
 
 }
-
-
-
 
 </script>
 
 <div>
     <h2>Create Component</h2>
     
-    <form class="box" on:submit|preventDefault={handleSubmit}>
-        <input type="text" placeholder="ExampleName" bind:value={examplename} />
-        <input type="text" placeholder="ExampleValue" bind:value={examplevalue} />
+    <form class="box" on:submit|preventDefault={create}>
+        <input type="text" placeholder="ExampleName" bind:value={name} />
+        <input type="text" placeholder="ExampleValue" bind:value={value} />
         <input type="submit" />
     </form>
-    {$exampleStore}
+    StoreTest: {$exampleName}
+    <br>
+    StoreTest: {$exampleValue}
 
 </div>
