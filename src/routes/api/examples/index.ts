@@ -36,16 +36,18 @@ export async function POST({ request } : any) {
         body: request.body
     });
 
-    let data : any = [];
+    let data : JSONValue = [];
 
     if (r.status === 200) {
-        console.log(r.statusText)
+        console.log(r.status)
         data = await r.json();
     } else {
-        console.log(r.statusText)
+        console.log(r.status)
         //throw new Error(r.statusText);
     }
     
+
+    console.log("TODO make it respond with the data... doesnt work atm...")
     console.log(data);
 
     return {

@@ -1,6 +1,7 @@
 <script lang="ts">
 
-import {exampleName,exampleValue} from '../../stores.js'
+// import {exampleName,exampleValue} from '../../stores.js'
+import ExampleStore from '../../stores.js'
 
 let name: string = ""
 let value: string = ""
@@ -16,8 +17,17 @@ async function create() {
 
     //todo if result ok
     //add values to stores
-    $exampleName = name
-    $exampleValue = value
+    // $exampleName = name
+    // $exampleValue = value
+    $ExampleStore = [
+        {id: 'unknowntodogetfromresponse', name: name, value: value}
+    ]
+
+    let data : any = [];
+    // console.log(submit.json())
+    data = await submit.json();
+    
+    console.log(data.data);
 
 }
 
@@ -31,8 +41,15 @@ async function create() {
         <input type="text" placeholder="ExampleValue" bind:value={value} />
         <input type="submit" />
     </form>
-    StoreTest: {$exampleName}
+    StoreTest: {$ExampleStore[0].id}
     <br>
-    StoreTest: {$exampleValue}
+    StoreTest: {$ExampleStore[0].name}
+    <br>
+    StoreTest: {$ExampleStore[0].value}
+    <!-- StoreTest: {$exampleName}
+    <br>
+    StoreTest: {$exampleValue} -->
+
+    
 
 </div>
