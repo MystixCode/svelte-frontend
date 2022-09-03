@@ -23,9 +23,10 @@ async function create() {
 
     //todo if result ok
     //add values to store
-    $ExampleStore = [
-        {id: data.data.data.id, examplename: data.data.data.examplename, examplevalue: data.data.data.examplevalue}
-    ]
+    $ExampleStore = [...$ExampleStore, {
+                id:data.data.data.id, examplename: data.data.data.examplename, examplevalue: data.data.data.examplevalue
+    }];
+
     //Todo: is it possible to do it wthout that many data.data.data.data.data ? xD parse response into custom type?
 }
 
@@ -39,9 +40,9 @@ async function create() {
         <input type="text" placeholder="ExampleValue" bind:value={cvalue} />
         <input type="submit" />
     </form>
-    StoreTest: {$ExampleStore[0].id}
+    StoreTest: {$ExampleStore[$ExampleStore.length-1].id}
     <br>
-    StoreTest: {$ExampleStore[0].examplename}
+    StoreTest: {$ExampleStore[$ExampleStore.length-1].examplename}
     <br>
-    StoreTest: {$ExampleStore[0].examplevalue}
+    StoreTest: {$ExampleStore[$ExampleStore.length-1].examplevalue}
 </div>

@@ -4,6 +4,8 @@ import type { JSONObject } from '@sveltejs/kit/types/private';
 // Todo: do it the typescript way with example and examples type etc
 import { onMount } from 'svelte';
 
+import ExampleStore from '../../stores.js'
+
 type Example = {
     id: string
     examplename: string
@@ -23,6 +25,17 @@ onMount(async () => {
         else {
             console.log("error");
         }
+        //todo if result ok
+        //add values to store
+        
+        examples.forEach( example=> {
+
+            $ExampleStore = [...$ExampleStore, {
+                id: example.id, examplename: example.examplename, examplevalue: example.examplevalue
+            }];
+
+        });
+
 	});
 
 </script>
@@ -31,7 +44,8 @@ onMount(async () => {
     <!-- {JSON.stringify(resjson)} -->
     <h2>GetAll Component</h2>
     <div class="box">
-        {#each examples as example}
+        
+        {#each $ExampleStore as example}
             <div class="box2">
                 <span>id: {example.id} </span><br>
                 <span>examplename: {example.examplename} </span><br>
