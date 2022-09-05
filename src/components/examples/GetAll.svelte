@@ -26,8 +26,8 @@ onMount(async () => {
             console.log("error");
         }
         //todo if result ok
-        //add values to store
         
+        //add values to store
         examples.forEach( example=> {
 
             $ExampleStore = [...$ExampleStore, {
