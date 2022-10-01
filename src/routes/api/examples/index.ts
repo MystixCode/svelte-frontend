@@ -2,7 +2,7 @@ import type { JSONValue } from "@sveltejs/kit/types/private";
 
 const url = 'http://localhost:8080/v1/examples'
 
-export async function GET(request: Request ) {
+export async function GET(request: Request) {
     const r = await fetch(url, {
         headers: {
             Accept: 'application/json',
@@ -35,18 +35,18 @@ export async function POST({ request } : any) {
         },
         body: request.body
     });
-
+    // console.log(r)
     let data : any = [];
-
-    if (r.status === 200) {
-        console.log(r.statusText)
-        data = await r.json();
+    data = await r.json();
+    if (r.status === 201) {
+        console.log(r.status)
+        
     } else {
-        console.log(r.statusText)
+        console.log(r.status)
         //throw new Error(r.statusText);
     }
     
-    console.log(data);
+    //console.log(data);
 
     return {
         body: {
