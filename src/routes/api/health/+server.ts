@@ -1,4 +1,4 @@
-const apiUrl:string = 'http://localhost:8080/v1/health'
+const apiUrl:string = 'https://goat.mindlabs.dev/v1/health'
 
 /** @type {import('./$types').RequestHandler} */
 export async function GET(request: Request) {
