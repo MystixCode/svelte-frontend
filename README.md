@@ -1,6 +1,16 @@
+# svelte-frontend
+an example/template for a website build with svelte-kit \
+\
+contains:
+- css navigation with burger button
+- component/page/layout example
+- global css file
+- connecting to API for data (https://github.com/goat-tool/goat)
+- stores
 
+Demo: https://svelte-frontend.mindlabs.dev/
 
-## Developing
+## developing
 
 Start a development server:
 
@@ -9,7 +19,7 @@ Start a development server:
  npm run dev -- --port 3000 --open
 ```
 
-## Building
+## building
 
 To create a production version of your app:
 
