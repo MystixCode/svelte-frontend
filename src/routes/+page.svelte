@@ -7,4 +7,4 @@
 </svelte:head>
 
 <h1>Welcome to { website }</h1>
-<img alt="dolphin" src="dolphin.png"> 
+<img alt="dolphin" src="/images/dolphin.png"> 
